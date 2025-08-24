@@ -1,0 +1,14 @@
+{
+  "attribute.extra-entity-attributes.villager_discount": "Villager Discount",
+  "attribute.extra-entity-attributes.max_hunger": "Max Hunger",
+  "attribute.extra-entity-attributes.food_nutrition_multiplier": "Food Nutrition Multiplier",
+  "attribute.extra-entity-attributes.food_saturation_multiplier": "Food Saturation Multiplier",
+  "attribute.extra-entity-attributes.eating_speed": "Eating Speed",
+  "attribute.extra-entity-attributes.drinking_speed": "Drinking Speed",
+  "attribute.extra-entity-attributes.status_effect_duration": "Status Effect Duration",
+  "attribute.extra-entity-attributes.sprinting_speed": "Sprinting Speed",
+  "attribute.extra-entity-attributes.climbing_speed": "Climbing Speed",
+  "attribute.extra-entity-attributes.creative_flying_speed": "Creative Flying Speed",
+  "attribute.extra-entity-attributes.slipperiness": "Slipperiness",
+  "attribute.extra-entity-attributes.name_tag_visibility_range": "Name Tag Visibility Range"
+}

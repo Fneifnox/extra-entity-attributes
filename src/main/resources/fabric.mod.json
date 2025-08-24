@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "extra-entity-attributes",
+	"version": "${version}",
+	"name": "Extra Entity Attributes",
+	"description": "This mod adds new attributes, which serve as an API for other mods.",
+	"authors": [
+		"Fneifnox"
+	],
+	"contact": {
+		"homepage": "https://discord.gg/bszSDCq5ms",
+		"sources": "https://github.com/Fneifnox/extra-entity-attributes",
+		"issues": "https://github.com/Fneifnox/extra-entity-attributes/issues"
+	},
+	"license": "Fneifnoxs License",
+	"icon": "assets/extra-entity-attributes/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.fneifnox.extraentityattributes.ExtraEntityAttributes"
+		],
+		"fabric-datagen": [
+			"net.fneifnox.extraentityattributes.ExtraEntityAttributesDataGenerator"
+		]
+	},
+	"mixins": [
+		"extra-entity-attributes.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.17.2",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

@@ -1,0 +1,29 @@
+{
+  "required": true,
+  "package": "net.fneifnox.extraentityattributes.attributes",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "LivingEntityAttributesMixin",
+    "PlayerAttributesMixin",
+    "climbingSpeed.ClimbingSpeedMixin",
+    "creativeFlyingSpeed.FlyingSpeedMixin",
+    "foodMultiplier.FoodMixin",
+    "foodSpeed.EatingSpeedMixin",
+    "maxHunger.HungerBarMixin",
+    "slipperiness.SlipperinessMixin",
+    "sprintingSpeed.SprintingSpeedMixin",
+    "statusEffectDuration.StatusEffectDurationMixin",
+    "villagerDiscount.VillagerOfferMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  },
+  "client": [
+    "maxHunger.InGameHudMixin",
+    "nameTagVisibilityRange.NameTagVisibilityRangeMixin",
+    "statusEffectDuration.PotionTooltipMixin"
+  ]
+}
