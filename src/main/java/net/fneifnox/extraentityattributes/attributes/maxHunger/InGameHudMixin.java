@@ -75,10 +75,8 @@ public class InGameHudMixin {
     }
 
     // Dynamically change the position of air bubbles to match the MAX_HUNGER value
-    @ModifyVariable(method = "renderStatusBars", at = @At("STORE"), slice = @Slice(
-            from = @At(value = "INVOKE", target = "Lnet/minecraft/util/profiler/Profiler;swap(Ljava/lang/String;)V"),
-            to = @At(value = "INVOKE", target = "Lnet/minecraft/util/profiler/Profiler;pop()V")), name = "r")
-    public int changeAirPosition(int original) {
+    @ModifyArg(method = "renderStatusBars", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/DrawContext;drawGuiTexture(Lnet/minecraft/util/Identifier;IIII)V"), index = 2)
+    private int changeAirPosition(int original) {
         PlayerEntity player = MinecraftClient.getInstance().player;
         if (player.getAttributeValue(ExtraEntityAttributes.MAX_HUNGER) > 20.0) {
             int hungerRows = (int) Math.ceil(player.getAttributeValue(ExtraEntityAttributes.MAX_HUNGER) / 20);
