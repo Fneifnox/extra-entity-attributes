@@ -14,7 +14,9 @@ public abstract class HungerBarMixin {
 
     @Inject(method = "update", at = @At("HEAD"))
     private void getPlayer(PlayerEntity player, CallbackInfo ci) {
-        getPlayer = player;
+        if (getPlayer == null) {
+            getPlayer = player;
+        }
 
         // To decrease internal foodLevel to MAX_HUNGER
         HungerManager hungerManager = (HungerManager)(Object)this;
@@ -41,7 +43,7 @@ public abstract class HungerBarMixin {
             return (int) getPlayer.getAttributeValue(ExtraEntityAttributes.MAX_HUNGER);
         }
         else {
-            return constant;
+            return 20;
         }
     }
 }

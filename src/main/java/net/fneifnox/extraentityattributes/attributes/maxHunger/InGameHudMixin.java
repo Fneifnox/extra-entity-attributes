@@ -2,6 +2,7 @@ package net.fneifnox.extraentityattributes.attributes.maxHunger;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.fneifnox.extraentityattributes.ExtraEntityAttributes;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.entity.effect.StatusEffects;
@@ -25,9 +26,8 @@ public class InGameHudMixin {
 
     private final Random random = Random.create();
 
-    // I should probably rewrite this for compat reasons...
     @Inject(method = "renderFood", at = @At("HEAD"), cancellable = true)
-    private void resetFoodIndex(DrawContext context, PlayerEntity player, int top, int right, CallbackInfo ci) {
+    private void changeFoodRendering(DrawContext context, PlayerEntity player, int top, int right, CallbackInfo ci) {
         ci.cancel();
         InGameHud inGameHud = (InGameHud)(Object)this;
         int maxFood = (int) Math.ceil(player.getAttributeValue(ExtraEntityAttributes.MAX_HUNGER) / 2);
@@ -68,6 +68,22 @@ public class InGameHudMixin {
             }
         }
 
+        // To avoid issues with eating food that is alwaysEdible when you're already full
+        hungerManager.update(player);
+
         RenderSystem.disableBlend();
+    }
+
+    // Dynamically change the position of air bubbles to match the MAX_HUNGER value
+    @ModifyVariable(method = "renderStatusBars", at = @At("STORE"), slice = @Slice(
+            from = @At(value = "INVOKE", target = "Lnet/minecraft/util/profiler/Profiler;swap(Ljava/lang/String;)V"),
+            to = @At(value = "INVOKE", target = "Lnet/minecraft/util/profiler/Profiler;pop()V")), name = "r")
+    public int changeAirPosition(int original) {
+        PlayerEntity player = MinecraftClient.getInstance().player;
+        if (player.getAttributeValue(ExtraEntityAttributes.MAX_HUNGER) > 20.0) {
+            int hungerRows = (int) Math.ceil(player.getAttributeValue(ExtraEntityAttributes.MAX_HUNGER) / 20);
+            return original - (hungerRows - 1) * 8;
+        }
+        return original;
     }
 }

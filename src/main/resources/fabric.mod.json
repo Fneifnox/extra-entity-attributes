@@ -12,7 +12,7 @@
 		"sources": "https://github.com/Fneifnox/extra-entity-attributes",
 		"issues": "https://github.com/Fneifnox/extra-entity-attributes/issues"
 	},
-	"license": "Fneifnoxs License",
+	"license": "Fneifnox's License",
 	"icon": "assets/extra-entity-attributes/icon.png",
 	"environment": "*",
 	"entrypoints": {
@@ -28,7 +28,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.17.2",
-		"minecraft": "~1.21.1",
+		"minecraft": "*",
 		"java": ">=21",
 		"fabric-api": "*"
 	},

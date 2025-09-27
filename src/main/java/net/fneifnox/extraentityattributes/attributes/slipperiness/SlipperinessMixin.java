@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.At;
 public class SlipperinessMixin {
 
     @WrapOperation(method = "travel", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/Block;getSlipperiness()F"))
-    private float changeSlipResistanace(Block block, Operation<Float> original) {
+    private float changeSlipperiness(Block block, Operation<Float> original) {
         return getModifiedSlipperiness(original.call(block), (LivingEntity) (Object) this, block);
     }
 

@@ -7,7 +7,6 @@
     "PlayerAttributesMixin",
     "climbingSpeed.ClimbingSpeedMixin",
     "creativeFlyingSpeed.FlyingSpeedMixin",
-    "foodMultiplier.FoodMixin",
     "foodSpeed.EatingSpeedMixin",
     "maxHunger.HungerBarMixin",
     "slipperiness.SlipperinessMixin",
