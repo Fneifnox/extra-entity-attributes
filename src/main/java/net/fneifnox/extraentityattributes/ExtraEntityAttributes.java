@@ -31,6 +31,7 @@ public class ExtraEntityAttributes implements ModInitializer {
 	public static final RegistryEntry<EntityAttribute> SPRINTING_SPEED = registerAttribute("sprinting_speed", 0.13, 0.01, 1024);
 	public static final RegistryEntry<EntityAttribute> CLIMBING_SPEED = registerAttribute("climbing_speed", 0.2, 0.01, 128);
 	public static final RegistryEntry<EntityAttribute> CREATIVE_FLYING_SPEED = registerAttribute("creative_flying_speed", 0.05, 0.001, 128);
+	public static final RegistryEntry<EntityAttribute> MOUNT_SPEED_MULTIPLIER = registerAttribute("mount_speed_multiplier", 1, 0, 64);
 	public static final RegistryEntry<EntityAttribute> SLIPPERINESS = registerAttribute("slipperiness", 1.0, 0.0, 1.0);
 	public static final RegistryEntry<EntityAttribute> NAME_TAG_VISIBILITY_RANGE = registerAttribute("name_tag_visibility_range", 64, 0, 64);
 
