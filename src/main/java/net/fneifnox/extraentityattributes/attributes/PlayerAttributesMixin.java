@@ -22,6 +22,7 @@ public abstract class PlayerAttributesMixin {
                 .add(ExtraEntityAttributes.NAME_TAG_VISIBILITY_RANGE)
                 .add(ExtraEntityAttributes.DRINKING_SPEED)
                 .add(ExtraEntityAttributes.MAX_HUNGER)
-                .add(ExtraEntityAttributes.MOUNT_SPEED_MULTIPLIER);
+                .add(ExtraEntityAttributes.MOUNT_SPEED_MULTIPLIER)
+                .add(ExtraEntityAttributes.CROSSBOW_PULL_TIME_MULTIPLIER);
     }
 }

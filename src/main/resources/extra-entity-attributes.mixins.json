@@ -11,6 +11,7 @@
     "foodSpeed.EatingSpeedMixin",
     "maxHunger.HungerBarMixin",
     "mountSpeedMultiplier.MovementSpeedMixin",
+    "pullTimeMultiplier.CrossbowPullTimeMixin",
     "slipperiness.SlipperinessMixin",
     "sprintingSpeed.SprintingSpeedMixin",
     "statusEffectDuration.StatusEffectDurationMixin",

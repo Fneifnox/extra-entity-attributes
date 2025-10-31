@@ -6,9 +6,11 @@
   "attribute.extra-entity-attributes.eating_speed": "Eating Speed",
   "attribute.extra-entity-attributes.drinking_speed": "Drinking Speed",
   "attribute.extra-entity-attributes.status_effect_duration": "Status Effect Duration",
+  "attribute.extra-entity-attributes.crossbow_pull_time_multiplier": "Crossbow Pull Time Multiplier",
   "attribute.extra-entity-attributes.sprinting_speed": "Sprinting Speed",
   "attribute.extra-entity-attributes.climbing_speed": "Climbing Speed",
   "attribute.extra-entity-attributes.creative_flying_speed": "Creative Flying Speed",
+  "attribute.extra-entity-attributes.mount_speed_multiplier": "Mount Speed Multiplier",
   "attribute.extra-entity-attributes.slipperiness": "Slipperiness",
   "attribute.extra-entity-attributes.name_tag_visibility_range": "Name Tag Visibility Range"
 }
