@@ -6,6 +6,8 @@
   "attribute.extra-entity-attributes.eating_speed": "Eating Speed",
   "attribute.extra-entity-attributes.drinking_speed": "Drinking Speed",
   "attribute.extra-entity-attributes.status_effect_duration": "Status Effect Duration",
+  "attribute.extra-entity-attributes.lifesteal": "Lifesteal",
+  "attribute.extra-entity-attributes.hungersteal": "Hungersteal",
   "attribute.extra-entity-attributes.crossbow_pull_time_multiplier": "Crossbow Pull Time Multiplier",
   "attribute.extra-entity-attributes.sprinting_speed": "Sprinting Speed",
   "attribute.extra-entity-attributes.climbing_speed": "Climbing Speed",
