@@ -25,6 +25,7 @@ public abstract class PlayerAttributesMixin {
                 .add(ExtraEntityAttributes.MOUNT_SPEED_MULTIPLIER)
                 .add(ExtraEntityAttributes.CROSSBOW_PULL_TIME_MULTIPLIER)
                 .add(ExtraEntityAttributes.LIFESTEAL)
-                .add(ExtraEntityAttributes.HUNGERSTEAL);
+                .add(ExtraEntityAttributes.HUNGERSTEAL)
+                .add(ExtraEntityAttributes.SPRINTING_FOOD);
     }
 }

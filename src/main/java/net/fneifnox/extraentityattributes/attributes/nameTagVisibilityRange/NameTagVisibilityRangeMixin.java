@@ -1,5 +1,6 @@
 package net.fneifnox.extraentityattributes.attributes.nameTagVisibilityRange;
 
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import net.fneifnox.extraentityattributes.ExtraEntityAttributes;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
@@ -10,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.*;
 @Mixin(EntityRenderer.class)
 public class NameTagVisibilityRangeMixin {
 
-    @ModifyConstant(method = "renderLabelIfPresent", constant = @Constant(doubleValue = 4096.0))
+    @ModifyExpressionValue(method = "renderLabelIfPresent", at = @At(value = "CONSTANT", args = "doubleValue=4096.0"))
     private double changeNameTagVisibilityRange(double constant) {
         MinecraftClient client = MinecraftClient.getInstance();
         ClientPlayerEntity player = client.player;

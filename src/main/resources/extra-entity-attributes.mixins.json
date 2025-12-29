@@ -9,13 +9,13 @@
     "creativeFlyingSpeed.FlyingSpeedMixin",
     "foodMultiplier.FoodMixin",
     "foodSpeed.EatingSpeedMixin",
-    "steal.LivingEntityDamageMixin",
     "maxHunger.HungerBarMixin",
     "mountSpeedMultiplier.MovementSpeedMixin",
     "pullTimeMultiplier.CrossbowPullTimeMixin",
     "slipperiness.SlipperinessMixin",
     "sprintingSpeed.SprintingSpeedMixin",
     "statusEffectDuration.StatusEffectDurationMixin",
+    "steal.LivingEntityDamageMixin",
     "villagerDiscount.VillagerOfferMixin"
   ],
   "injectors": {
@@ -27,6 +27,7 @@
   "client": [
     "maxHunger.InGameHudMixin",
     "nameTagVisibilityRange.NameTagVisibilityRangeMixin",
+    "sprintingFood.FoodNeededForSprintingMixin",
     "statusEffectDuration.PotionTooltipMixin"
   ]
 }

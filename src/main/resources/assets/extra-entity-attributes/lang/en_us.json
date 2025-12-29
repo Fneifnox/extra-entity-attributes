@@ -8,6 +8,7 @@
   "attribute.extra-entity-attributes.status_effect_duration": "Status Effect Duration",
   "attribute.extra-entity-attributes.lifesteal": "Lifesteal",
   "attribute.extra-entity-attributes.hungersteal": "Hungersteal",
+  "attribute.extra-entity-attributes.sprinting_food": "Sprinting Food",
   "attribute.extra-entity-attributes.crossbow_pull_time_multiplier": "Crossbow Pull Time Multiplier",
   "attribute.extra-entity-attributes.sprinting_speed": "Sprinting Speed",
   "attribute.extra-entity-attributes.climbing_speed": "Climbing Speed",

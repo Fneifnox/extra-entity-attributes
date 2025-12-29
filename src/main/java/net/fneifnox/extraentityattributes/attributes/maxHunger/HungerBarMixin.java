@@ -1,5 +1,6 @@
 package net.fneifnox.extraentityattributes.attributes.maxHunger;
 
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import net.fneifnox.extraentityattributes.ExtraEntityAttributes;
 import net.minecraft.entity.player.HungerManager;
 import net.minecraft.entity.player.PlayerEntity;
@@ -27,7 +28,7 @@ public abstract class HungerBarMixin {
         }
     }
 
-    @ModifyConstant(method = "addInternal", constant = @Constant(intValue = 20))
+    @ModifyExpressionValue(method = "addInternal", at = @At(value = "CONSTANT", args = "intValue=20"))
     private int changeMaxValue(int constant) {
         if (getPlayer != null) {
             return (int) getPlayer.getAttributeValue(ExtraEntityAttributes.MAX_HUNGER);
@@ -37,13 +38,13 @@ public abstract class HungerBarMixin {
         }
     }
 
-    @ModifyConstant(method = "isNotFull", constant = @Constant(intValue = 20))
+    @ModifyExpressionValue(method = "isNotFull", at = @At(value = "CONSTANT", args = "intValue=20"))
     private int changeFullValue(int constant) {
         if (getPlayer != null) {
             return (int) getPlayer.getAttributeValue(ExtraEntityAttributes.MAX_HUNGER);
         }
         else {
-            return 20;
+            return constant;
         }
     }
 }

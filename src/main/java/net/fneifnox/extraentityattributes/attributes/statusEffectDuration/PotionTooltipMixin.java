@@ -1,5 +1,6 @@
 package net.fneifnox.extraentityattributes.attributes.statusEffectDuration;
 
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fneifnox.extraentityattributes.ExtraEntityAttributes;
@@ -7,14 +8,13 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.item.PotionItem;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.Constant;
-import org.spongepowered.asm.mixin.injection.ModifyConstant;
+import org.spongepowered.asm.mixin.injection.At;
 
 @Environment(EnvType.CLIENT)
 @Mixin(PotionItem.class)
 public class PotionTooltipMixin {
 
-    @ModifyConstant(method = "appendTooltip", constant = @Constant(floatValue = 1.0F))
+    @ModifyExpressionValue(method = "appendTooltip", at = @At(value = "CONSTANT", args = "floatValue=1.0F"))
     private float changeTooltipDuration(float constant) {
         MinecraftClient client = MinecraftClient.getInstance();
         ClientPlayerEntity player = client.player;
