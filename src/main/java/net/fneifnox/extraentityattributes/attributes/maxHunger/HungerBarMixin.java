@@ -31,6 +31,7 @@ public abstract class HungerBarMixin {
     @ModifyExpressionValue(method = "addInternal", at = @At(value = "CONSTANT", args = "intValue=20"))
     private int changeMaxValue(int constant) {
         if (getPlayer != null) {
+            ExtraEntityAttributes.hasBeenCalled = false;
             return (int) getPlayer.getAttributeValue(ExtraEntityAttributes.MAX_HUNGER);
         }
         else {
@@ -41,6 +42,7 @@ public abstract class HungerBarMixin {
     @ModifyExpressionValue(method = "isNotFull", at = @At(value = "CONSTANT", args = "intValue=20"))
     private int changeFullValue(int constant) {
         if (getPlayer != null) {
+            ExtraEntityAttributes.hasBeenCalled = false;
             return (int) getPlayer.getAttributeValue(ExtraEntityAttributes.MAX_HUNGER);
         }
         else {

@@ -14,6 +14,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import static net.fneifnox.extraentityattributes.ExtraEntityAttributes.hasBeenCalled;
+
 @Mixin(InGameHud.class)
 public class InGameHudMixin {
 
@@ -32,11 +34,17 @@ public class InGameHudMixin {
         InGameHud inGameHud = (InGameHud)(Object)this;
         int maxFood = (int) Math.ceil(player.getAttributeValue(ExtraEntityAttributes.MAX_HUNGER) / 2);
 
+        if (!hasBeenCalled) {
+            hasBeenCalled = true;
+            // To avoid issues with eating food that is alwaysEdible when you're already full
+            player.getHungerManager().update(player);
+        }
+
         HungerManager hungerManager = player.getHungerManager();
         int foodLevel = hungerManager.getFoodLevel();
         RenderSystem.enableBlend();
 
-        for(int j = 0; j < maxFood; ++j) {
+        for (int j = 0; j < maxFood; ++j) {
             int row = j / 10;
             int col = j % 10;
             int x = right - col * 8 - 9;
@@ -67,9 +75,6 @@ public class InGameHudMixin {
                 context.drawGuiTexture(identifier2, x, y, 9, 9);
             }
         }
-
-        // To avoid issues with eating food that is alwaysEdible when you're already full
-        hungerManager.update(player);
 
         RenderSystem.disableBlend();
     }

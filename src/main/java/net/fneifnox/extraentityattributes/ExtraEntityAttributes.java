@@ -16,6 +16,8 @@ public class ExtraEntityAttributes implements ModInitializer {
 
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
+	public static boolean hasBeenCalled = false;
+
 	@Override
 	public void onInitialize() {
 
