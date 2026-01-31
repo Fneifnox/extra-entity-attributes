@@ -26,6 +26,8 @@ public abstract class PlayerAttributesMixin {
                 .add(ExtraEntityAttributes.CROSSBOW_PULL_TIME_MULTIPLIER)
                 .add(ExtraEntityAttributes.LIFESTEAL)
                 .add(ExtraEntityAttributes.HUNGERSTEAL)
-                .add(ExtraEntityAttributes.SPRINTING_FOOD);
+                .add(ExtraEntityAttributes.SPRINTING_FOOD)
+                .add(ExtraEntityAttributes.FISHING_DURATION_MULTIPLIER)
+                .add(ExtraEntityAttributes.ADDITIONAL_FISHING_LUCK);
     }
 }

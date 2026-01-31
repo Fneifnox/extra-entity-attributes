@@ -7,6 +7,7 @@
     "PlayerAttributesMixin",
     "climbingSpeed.ClimbingSpeedMixin",
     "creativeFlyingSpeed.FlyingSpeedMixin",
+    "fishing.FishingMixin",
     "foodMultiplier.FoodMixin",
     "foodSpeed.EatingSpeedMixin",
     "maxHunger.HungerBarMixin",
@@ -29,5 +30,8 @@
     "nameTagVisibilityRange.NameTagVisibilityRangeMixin",
     "sprintingFood.FoodNeededForSprintingMixin",
     "statusEffectDuration.PotionTooltipMixin"
-  ]
+  ],
+  "mixinextras": {
+    "minVersion": "0.5.3"
+  }
 }

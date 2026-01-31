@@ -34,6 +34,8 @@ public class ExtraEntityAttributes implements ModInitializer {
 	public static final RegistryEntry<EntityAttribute> HUNGERSTEAL = registerAttribute("hungersteal", 0, -64, 64);
 	public static final RegistryEntry<EntityAttribute> SPRINTING_FOOD = registerAttribute("sprinting_food", 6, 0, 1024);
 	public static final RegistryEntry<EntityAttribute> CROSSBOW_PULL_TIME_MULTIPLIER = registerAttribute("crossbow_pull_time_multiplier", 1, 0, 64);
+	public static final RegistryEntry<EntityAttribute> FISHING_DURATION_MULTIPLIER = registerAttribute("fishing_duration_multiplier", 1, 0, 64);
+	public static final RegistryEntry<EntityAttribute> ADDITIONAL_FISHING_LUCK = registerAttribute("additional_fishing_luck", 0, -100, 100);
 	public static final RegistryEntry<EntityAttribute> SPRINTING_SPEED = registerAttribute("sprinting_speed", 0.13, 0.01, 1024);
 	public static final RegistryEntry<EntityAttribute> CLIMBING_SPEED = registerAttribute("climbing_speed", 0.2, 0.01, 128);
 	public static final RegistryEntry<EntityAttribute> CREATIVE_FLYING_SPEED = registerAttribute("creative_flying_speed", 0.05, 0.001, 128);
