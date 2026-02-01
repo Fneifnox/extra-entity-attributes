@@ -32,7 +32,8 @@ public abstract class FishingMixin {
     private void modifyFishingSpeed(FishingBobberEntity instance, int value, Operation<Void> original) {
         PlayerEntity player = instance.getPlayerOwner();
         if (player != null) {
-            this.waitCountdown = (int) ((this.waitCountdown - this.waitTimeReductionTicks) * player.getAttributeValue(ExtraEntityAttributes.FISHING_DURATION_MULTIPLIER));
+            System.out.println((int) (this.waitCountdown * player.getAttributeValue(ExtraEntityAttributes.FISHING_DURATION_MULTIPLIER) - this.waitTimeReductionTicks));
+            this.waitCountdown = (int) (this.waitCountdown * player.getAttributeValue(ExtraEntityAttributes.FISHING_DURATION_MULTIPLIER) - this.waitTimeReductionTicks);
             if (this.waitCountdown <= 0) {
                 this.waitCountdown = 1;
             }
