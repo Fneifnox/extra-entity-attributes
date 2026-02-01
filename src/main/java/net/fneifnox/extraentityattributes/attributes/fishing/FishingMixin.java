@@ -33,6 +33,9 @@ public abstract class FishingMixin {
         PlayerEntity player = instance.getPlayerOwner();
         if (player != null) {
             this.waitCountdown = (int) ((this.waitCountdown - this.waitTimeReductionTicks) * player.getAttributeValue(ExtraEntityAttributes.FISHING_DURATION_MULTIPLIER));
+            if (this.waitCountdown <= 0) {
+                this.waitCountdown = 1;
+            }
         }
     }
 
@@ -43,6 +46,7 @@ public abstract class FishingMixin {
     private float modifyFishingLuck(float original) {
         FishingBobberEntity fishingBobber = (FishingBobberEntity)(Object)this;
         PlayerEntity player = fishingBobber.getPlayerOwner();
+        if (!((isOpenOrWaterAroundInvoker) fishingBobber).getIsOpenOrWaterAround(fishingBobber.getBlockPos())) return 0;
         if (player != null) {
             return (float) (this.luckBonus + player.getLuck() + player.getAttributeValue(ExtraEntityAttributes.ADDITIONAL_FISHING_LUCK));
         }

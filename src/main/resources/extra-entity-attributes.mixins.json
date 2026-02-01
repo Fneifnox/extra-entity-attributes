@@ -8,6 +8,7 @@
     "climbingSpeed.ClimbingSpeedMixin",
     "creativeFlyingSpeed.FlyingSpeedMixin",
     "fishing.FishingMixin",
+    "fishing.isOpenOrWaterAroundInvoker",
     "foodMultiplier.FoodMixin",
     "foodSpeed.EatingSpeedMixin",
     "maxHunger.HungerBarMixin",
