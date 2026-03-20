@@ -8,13 +8,16 @@
   "attribute.extra-entity-attributes.status_effect_duration": "Status Effect Duration",
   "attribute.extra-entity-attributes.lifesteal": "Lifesteal",
   "attribute.extra-entity-attributes.hungersteal": "Hungersteal",
+  "attribute.extra-entity-attributes.dodge_chance": "Dodge Chance",
   "attribute.extra-entity-attributes.sprinting_food": "Sprinting Food",
+  "attribute.extra-entity-attributes.crossbow_pull_time_multiplier": "Crossbow Pull Time Multiplier",
   "attribute.extra-entity-attributes.fishing_duration_multiplier": "Fishing Duration Multiplier",
   "attribute.extra-entity-attributes.additional_fishing_luck": "Additional Fishing Luck",
   "attribute.extra-entity-attributes.sprinting_speed": "Sprinting Speed",
   "attribute.extra-entity-attributes.climbing_speed": "Climbing Speed",
   "attribute.extra-entity-attributes.creative_flying_speed": "Creative Flying Speed",
   "attribute.extra-entity-attributes.mount_speed_multiplier": "Mount Speed Multiplier",
+  "attribute.extra-entity-attributes.max_jumps": "Max Jumps",
   "attribute.extra-entity-attributes.slipperiness": "Slipperiness",
   "attribute.extra-entity-attributes.name_tag_visibility_range": "Name Tag Visibility Range"
 }

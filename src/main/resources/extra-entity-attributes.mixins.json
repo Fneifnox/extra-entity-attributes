@@ -1,12 +1,13 @@
 {
   "required": true,
-  "package": "net.fneifnox.extraentityattributes.attributes",
+  "package": "net.fneifnox.extraentityattributes.attributeMixins",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "LivingEntityAttributesMixin",
     "PlayerAttributesMixin",
     "climbingSpeed.ClimbingSpeedMixin",
     "creativeFlyingSpeed.FlyingSpeedMixin",
+    "dodgeChance.LivingEntityDodgeDamageMixin",
     "fishing.FishingMixin",
     "fishing.isOpenOrWaterAroundInvoker",
     "foodMultiplier.FoodMixin",
