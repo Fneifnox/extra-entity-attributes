@@ -39,11 +39,9 @@ public class ExtraEntityAttributes implements ModInitializer, ClientModInitializ
 	@Override
 	public void onInitializeClient() {
 
-		System.out.println("TEST 1");
 		// Max Jumps
 		ClientTickEvents.START_CLIENT_TICK.register(client -> {
 			if (client.player == null) return;
-			System.out.println("TEST 2");
 			modifyJumpAmount((int) client.player.getAttributeValue(ExtraEntityAttributes.MAX_JUMPS));
 		});
 	}
