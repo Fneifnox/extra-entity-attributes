@@ -18,6 +18,9 @@
 	"entrypoints": {
 		"main": [
 			"net.fneifnox.extraentityattributes.ExtraEntityAttributes"
+		],
+		"client": [
+			"net.fneifnox.extraentityattributes.ExtraEntityAttributes"
 		]
 	},
 	"mixins": [

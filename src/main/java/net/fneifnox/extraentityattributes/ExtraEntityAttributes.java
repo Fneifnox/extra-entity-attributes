@@ -1,5 +1,6 @@
 package net.fneifnox.extraentityattributes;
 
+import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
@@ -15,7 +16,7 @@ import org.slf4j.LoggerFactory;
 
 import static net.fneifnox.extraentityattributes.attributes.maxJumps.JumpAmountModifier.modifyJumpAmount;
 
-public class ExtraEntityAttributes implements ModInitializer {
+public class ExtraEntityAttributes implements ModInitializer, ClientModInitializer {
 	public static final String MOD_ID = "extra-entity-attributes";
 
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
@@ -26,18 +27,24 @@ public class ExtraEntityAttributes implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
-		// Max Jumps
-		ClientTickEvents.START_CLIENT_TICK.register(client -> {
-			if (client.player == null) return;
-			modifyJumpAmount((int) client.player.getAttributeValue(ExtraEntityAttributes.MAX_JUMPS));
-		});
-
 		// Max Hunger
 		ServerPlayerEvents.COPY_FROM.register((oldPlayer, newPlayer, alive) -> {
 			if (!alive) {
 				// To set the hunger from a respawned player to the max amount
 				newPlayer.getHungerManager().setFoodLevel((int) newPlayer.getAttributeValue(ExtraEntityAttributes.MAX_HUNGER));
 			}
+		});
+	}
+
+	@Override
+	public void onInitializeClient() {
+
+		System.out.println("TEST 1");
+		// Max Jumps
+		ClientTickEvents.START_CLIENT_TICK.register(client -> {
+			if (client.player == null) return;
+			System.out.println("TEST 2");
+			modifyJumpAmount((int) client.player.getAttributeValue(ExtraEntityAttributes.MAX_JUMPS));
 		});
 	}
 
