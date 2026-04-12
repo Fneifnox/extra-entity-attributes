@@ -1,6 +1,7 @@
 package net.fneifnox.extraentityattributes.attributeMixins.dodgeChance;
 
 import net.fneifnox.extraentityattributes.ExtraEntityAttributes;
+import net.fneifnox.extraentityattributes.event.DodgeDamageEvent;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import org.spongepowered.asm.mixin.Mixin;
@@ -17,6 +18,7 @@ public class LivingEntityDodgeDamageMixin {
         float dodgeChance = (float) attackedLivingEntity.getAttributeValue(ExtraEntityAttributes.DODGE_CHANCE);
 
         if (attackedLivingEntity.getRandom().nextFloat() <= dodgeChance) {
+            DodgeDamageEvent.EVENT.invoker().onDodge(attackedLivingEntity, source, amount);
             cir.setReturnValue(false);
         }
     }
