@@ -14,7 +14,7 @@ public class SprintingSpeedMixin {
         PlayerEntity player = (PlayerEntity)(Object)this;
 
         if (player.isSprinting()) {
-            return original + (float) player.getAttributeValue(ExtraEntityAttributes.SPRINTING_SPEED);
+            return (original - 0.13f) + (float) player.getAttributeValue(ExtraEntityAttributes.SPRINTING_SPEED);
         }
 
         return original;
