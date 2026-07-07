@@ -26,6 +26,9 @@ public abstract class HungerBarMixin {
         if (getPlayer != null) {
             if (hungerManager.getFoodLevel() > getPlayer.getAttributeValue(ExtraEntityAttributes.MAX_HUNGER)) {
                 hungerManager.setFoodLevel((int) getPlayer.getAttributeValue(ExtraEntityAttributes.MAX_HUNGER));
+                if (hungerManager.getSaturationLevel() > getPlayer.getAttributeValue(ExtraEntityAttributes.MAX_HUNGER)) {
+                    hungerManager.setSaturationLevel((int) getPlayer.getAttributeValue(ExtraEntityAttributes.MAX_HUNGER));
+                }
             }
         }
     }

@@ -12,7 +12,9 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.random.Random;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
-import org.spongepowered.asm.mixin.injection.*;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import static net.fneifnox.extraentityattributes.ExtraEntityAttributes.hasBeenCalled;
@@ -30,9 +32,8 @@ public class InGameHudMixin {
     @Unique
     private final Random random = Random.create();
 
-    @Inject(method = "renderFood", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "renderFood", at = @At("TAIL"))
     private void changeFoodRendering(DrawContext context, PlayerEntity player, int top, int right, CallbackInfo ci) {
-        ci.cancel();
         InGameHud inGameHud = (InGameHud)(Object)this;
         int maxFood = (int) Math.ceil(player.getAttributeValue(ExtraEntityAttributes.MAX_HUNGER) / 2);
 
@@ -46,8 +47,8 @@ public class InGameHudMixin {
         int foodLevel = hungerManager.getFoodLevel();
         RenderSystem.enableBlend();
 
-        for (int j = 0; j < maxFood; ++j) {
-            int row = j / 10;
+        for (int j = 0; j < maxFood - 10; ++j) {
+            int row = j / 10 + 1;
             int col = j % 10;
             int x = right - col * 8 - 9;
             int y = top - row * 8;
@@ -64,16 +65,16 @@ public class InGameHudMixin {
                 identifier3 = FOOD_FULL_TEXTURE;
             }
 
-            if (player.getHungerManager().getSaturationLevel() <= 0.0F && inGameHud.getTicks() % (foodLevel * 3 + 1) == 0) {
+            if (player.getHungerManager().getSaturationLevel() <= 0.0F && inGameHud.getTicks() % ((foodLevel - 20) * 3 + 1) == 0) {
                 y += random.nextInt(3) - 1;
             }
 
             context.drawGuiTexture(identifier, x, y, 9, 9);
-            if (j * 2 + 1 < foodLevel) {
+            if (j * 2 + 1 < foodLevel - 20) {
                 context.drawGuiTexture(identifier3, x, y, 9, 9);
             }
 
-            if (j * 2 + 1 == foodLevel) {
+            if (j * 2 + 1 == foodLevel - 20) {
                 context.drawGuiTexture(identifier2, x, y, 9, 9);
             }
         }
